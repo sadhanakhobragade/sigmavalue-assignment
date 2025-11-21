@@ -1,0 +1,176 @@
+/* src/index.css */
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #020617, #020617);
+  color: #e5e7eb;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* === Cards / containers === */
+
+.glass-card {
+  background: #020617;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  color: #e5e7eb; /* default text inside cards is bright */
+}
+
+/* Make regular text readable */
+.glass-card p,
+.glass-card label,
+.glass-card span,
+.glass-card li {
+  color: #e5e7eb;
+}
+
+/* === Header / branding === */
+
+.accent-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #bbf7d0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.primary-btn {
+  border-radius: 999px;
+  padding-inline: 18px;
+  font-weight: 600;
+}
+
+.primary-btn-main {
+  background: linear-gradient(135deg, #22c55e, #22d3ee);
+  border: none;
+  color: #0f172a;
+}
+
+.primary-btn-main:hover {
+  filter: brightness(1.05);
+}
+
+.nav-brand {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 18px;
+  color: #f9fafb;
+}
+
+.nav-highlight {
+  color: #22d3ee;
+  font-weight: 700;
+}
+
+/* === Typography hierarchy === */
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f9fafb;
+}
+
+.sidebar-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f9fafb;
+}
+
+.summary-highlight {
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+/* Muted text should still be readable */
+.text-muted {
+  color: #9ca3af !important;
+}
+
+/* Small chips / badges */
+
+.badge-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+}
+
+/* === Inputs and form elements === */
+
+.form-label {
+  color: #e5e7eb;
+}
+
+.form-control,
+textarea.form-control {
+  font-size: 14px;
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+.form-control:focus,
+textarea.form-control:focus {
+  background-color: rgba(15, 23, 42, 1);
+  color: #f9fafb;
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 0.1rem rgba(34, 211, 238, 0.5);
+}
+
+/* File input area */
+input[type="file"].form-control {
+  padding: 6px;
+  background-color: rgba(15, 23, 42, 0.95);
+  color: #f9fafb;
+}
+
+/* === Table styling === */
+
+.table-container {
+  max-height: 340px;
+  overflow: auto;
+}
+
+.table-dark-custom {
+  background-color: #020617;
+}
+
+.table-dark-custom th {
+  background-color: #020617;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Make textarea placeholders clearly visible on dark background */
+
+textarea.form-control::placeholder {
+  color: #848890 !important;
+  opacity: 1 !important;
+}
+
+
+
+/* === Responsive === */
+
+@media (max-width: 991.98px) {
+  .app-shell {
+    padding: 16px;
+  }
+}
