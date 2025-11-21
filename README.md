@@ -4,77 +4,86 @@ React + Django + Excel + Chart.js
 
 📌 Overview
 
-This is a full-stack web application built for the
-SigmaValue Full Stack Developer Assignment.
+This full-stack web application was developed for the SigmaValue Full Stack Developer Assignment.
+It enables users to analyze real-estate locality data through a clean, intuitive interface.
 
-The app allows users to:
+The system allows users to:
 
-Upload or use a default Excel dataset
+Upload an Excel dataset or use the default one
 
-Ask locality-based real-estate queries
+Ask locality-based real-estate questions
 
-Get a short natural-language summary (mock LLM)
+View a concise natural-language summary
 
-View price and demand trends (Chart.js)
+Explore price & demand trends visualized with Chart.js
 
-View filtered dataset in a table
+View a filtered dataset table
 
-Download the filtered output as CSV
+Download the results as a CSV file
 
 🚀 Features
 🔹 Backend (Django REST Framework)
 
-Accepts file upload OR uses default Excel file
+Accepts Excel upload OR uses default sample Excel
 
 Parses Excel using pandas
 
-Filters data based on area extracted from query
+Cleans and normalizes dataset
 
-Generates:
-✔ Summary text
-✔ Chart JSON (price per year, demand per year)
-✔ Filtered table rows
+Filters data based on locality (area) extracted from query
 
-Clean API response (JSON)
+Returns:
+
+Summary text
+
+Chart data (price & demand per year)
+
+Filtered table rows
+
+Clean JSON API response
+
+CORS-enabled for frontend integration
 
 🔹 Frontend (React + Bootstrap + Chart.js)
 
-Modern UI with dark theme
+Modern, clean dark-theme UI
 
-Query input panel
+User-friendly Query Builder
 
-File upload
+File upload support
 
-Summary display
+Insight Summary panel
 
-Price & demand line chart
+Price & Demand line chart
 
-Scrollable filtered dataset table
+Scrollable filtered table
 
-Download CSV button
+CSV download button
 
-🗂 Folder Structure (Important)
+Fully responsive layout
+
+🗂 Folder Structure
 sigmavalue-assignment/
+│
 │── backend/
-│   ├── backend/
-│   ├── api/
-│   ├── data/sample_real_estate.xlsx
-│   └── manage.py
+│ ├── backend/
+│ ├── api/
+│ ├── data/sample_real_estate.xlsx
+│ └── manage.py
 │
 │── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
+│ ├── src/
+│ ├── public/
+│ └── package.json
 │
-│── README.md   ← THIS FILE
+│── README.md
 │── .gitignore
 
-🔧 Installation & Running
+🔧 Installation & Running Locally
 Backend (Django)
 cd backend
 pip install -r requirements.txt
 python manage.py runserver
-
 
 Backend runs at:
 http://127.0.0.1:8000
@@ -84,64 +93,56 @@ cd frontend
 npm install
 npm start
 
-
 Frontend runs at:
 http://localhost:3000
 
-📈 API Endpoint
-
+📈 API Endpoint Documentation
 POST /api/query/
 
-Accepts:
+Request Body (multipart/form-data):
 
-query: text
+query (string)
 
-file: optional Excel
+file (optional Excel: .xlsx, .xls)
 
-Returns:
+Response Example:
 
 {
-  "summary": "...",
-  "chart_data": {
-    "labels": [...],
-    "price": [...],
-    "demand": [...]
-  },
-  "table": [...]
+"summary": "Area 'Wakad': average price ₹55,000...",
+"chart_data": {
+"labels": ["2021", "2022", "2023"],
+"price": [54000, 56000, 58000],
+"demand": [120, 150, 175]
+},
+"table": [
+{ "year": 2021, "area": "Wakad", "price": 54000, "demand": 120 },
+...
+]
 }
 
-🎥 Demo Video (Required)
+🌐 Live Deployment
+Frontend (Vercel):
 
-You must record:
+https://sigmavalue-assignment.vercel.app
 
-Running backend
+Backend API (Render):
 
-Running frontend
+https://sigmavalue-assignment-l5fd.onrender.com/api/query/
 
-Entering a query
+Source Code (GitHub):
 
-Summary + Chart + Table appearing
-
-Duration: 1–2 minutes
-
-🌐 Deployment (Optional Bonus)
-
-Frontend: Vercel
-
-Backend: Render / Railway
-
-Add links here if deployed
+https://github.com/sadhanakhobragade/sigmavalue-assignment
 
 ✔ Evaluation Criteria Coverage
-Requirement	Status
-Code structure & clarity	✔ Yes
-UI/UX	✔ Modern dark UI
-Backend integration	✔ Working end-to-end
-Excel data filtering	✔ Accurate
-Chart correctness	✔ Chart.js implemented
-Bonus LLM	Optional
-Deployment	Optional
-
+Requirement Status
+Code structure ✔ Clean & organized
+UI/UX ✔ Modern dark UI
+Backend integration ✔ Fully functional
+Excel data processing ✔ Accurate filtering
+Chart correctness ✔ Implemented (Chart.js)
+Deployment ✔ Frontend + Backend live
+Bonus (LLM) Optional
 
 🧑‍💻 Author
+
 Sadhana Khobragade
