@@ -18,9 +18,14 @@ export default function ChatPanel({ onResult, loading, setLoading }) {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://127.0.0.1:8000/api/query/", form, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const res = await axios.post(
+        "https://sigmavalue-assignment-l5fd.onrender.com/api/query/",
+        form,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+
       onResult(res.data);
     } catch (err) {
       console.error(err);
